@@ -76,3 +76,7 @@ C:\Users\islem\source\repos\MVCFirstApp\MVCFirstApp\obj\Debug\MVCFirstApp.csproj
 C:\Users\islem\source\repos\MVCFirstApp\MVCFirstApp\obj\Debug\MVCFirstApp.csproj.CopyComplete
 C:\Users\islem\source\repos\MVCFirstApp\MVCFirstApp\obj\Debug\MVCFirstApp.dll
 C:\Users\islem\source\repos\MVCFirstApp\MVCFirstApp\obj\Debug\MVCFirstApp.pdb
+C:\Users\islem\source\repos\MVCFirstApp\MVCFirstApp\bin\EntityFramework.dll
+C:\Users\islem\source\repos\MVCFirstApp\MVCFirstApp\bin\EntityFramework.SqlServer.dll
+C:\Users\islem\source\repos\MVCFirstApp\MVCFirstApp\bin\EntityFramework.xml
+C:\Users\islem\source\repos\MVCFirstApp\MVCFirstApp\bin\EntityFramework.SqlServer.xml

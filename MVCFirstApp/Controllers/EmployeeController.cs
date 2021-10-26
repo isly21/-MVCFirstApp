@@ -10,12 +10,7 @@ namespace MVCFirstApp.Controllers
 {
     public class EmployeeController : Controller
     {
-        // GET: Employee
-        /*public ActionResult Search(String name)
-        {
-            var input = Server.HtmlEncode(name);
-            return Content(input);
-        }*/
+        private EmpDBContext db = new EmpDBContext();
 
         // [HttpGet] // permet de specifier que c'est la methode que l'on souhaite utiliser
         public ActionResult Search()
@@ -57,20 +52,22 @@ namespace MVCFirstApp.Controllers
             return View();
         }
 
+        // GET: Employee/Create
+        public ActionResult Create()
+        {
+            return View();
+        }
+
         // POST: Employee/Create
         //[HttpPost]
-        public ActionResult Create(FormCollection collection)
+        // POST: Employee/Create
+        [HttpPost]
+        public ActionResult Create(Employee emp)
         {
             try
             {
-                Employee emp = new Employee();
-                emp.Name = collection["Name"];
-                DateTime jDate;
-                DateTime.TryParse(collection["DOB"], out jDate);
-                emp.JoiningDate = jDate;
-                string age = collection["Age"];
-                emp.Age = Int32.Parse(age);
-                empList.Add(emp);
+                db.Employees.Add(emp);
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
             catch
@@ -113,7 +110,7 @@ namespace MVCFirstApp.Controllers
 
         public ActionResult Index()
         {
-            var employees = from e in empList
+            var employees = from e in db.Employees
                             orderby e.ID
                             select e;
             return View(employees);
